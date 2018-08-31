@@ -4,25 +4,42 @@
 
 'use strict';
 // get element with id, 'changeColor'
-let changeColor = document.getElementById('changeColor');
+let colorOptionDiv = document.getElementById('colorOptions');
+
 
 // get the value from chromes 'storage api'
-chrome.storage.sync.get('color', function(data) {
-  // set the background color to the color from the api
-  changeColor.style.backgroundColor = data.color;
-  // add a data attribute called 'value' that contains the color
-  changeColor.setAttribute('value', data.color);
+chrome.storage.sync.get('colors', function(data) {
+  console.log(data);
+  let allColors = data.colors;
+
+  for(let i=0; i<allColors.length; i++){
+    console.log("entered for loop");
+    let elem = document.createElement("BUTTON");
+    elem.style.backgroundColor = allColors[i];
+    elem.setAttribute('value', allColors[i]);
+    colorOptionDiv.appendChild(elem);
+  }
+
 });
 
-// when the user clicks on the changeColor icon in popup.html
-changeColor.onclick = function(element) {
-  // set a variable called 'color' that contains the value of the target clicked
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+  let js = 'document.getElementById("navigation01").style.backgroundColor = "#003262";' + 'document.body.style.backgroundColor = "#FDB515";';
+
+  chrome.tabs.executeScript(
+    tabs[0].id,
+    {code : js }
+  );
+})
+
+colorOptionDiv.onclick = function(element) {
   let color = element.target.value;
-  // if the chrome tab is active and current..
+
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    // .. execute a script that selects the first tab and adds the background color from the ref-value
+   
+    let jsCode = 'document.body.style.backgroundColor = "' + color + '";';
+    
     chrome.tabs.executeScript(
         tabs[0].id,
-        {code: 'document.body.style.backgroundColor = "' + color + '";'});
+        {code: jsCode});
   });
 };
