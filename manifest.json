@@ -1,7 +1,7 @@
 {
-  "name": "Getting Started Example",
+  "name": "Destiny Chrome Extension",
   "version": "1.0",
-  "description": "Build an Extension!",
+  "description": "Destiny Chrome Extension to change styling of Destiny Staff View",
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "options_page": "options.html",
   "background": {

@@ -17,7 +17,7 @@ chrome.runtime.onInstalled.addListener(function() {
     chrome.declarativeContent.onPageChanged.addRules([{
       // in this scenario, we check if the host is 'developer.chrome.com'
       conditions: [new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: {hostEquals: 'developer.chrome.com'},
+        pageUrl: {hostEquals: 'berkeleytestsv.destinysolutions.com'},
       })],
       // runs the 'action' if the above criteria is met -  im this case, putting an icon on the chrome toolbar
       actions: [new chrome.declarativeContent.ShowPageAction()]
