@@ -3,12 +3,25 @@
 // found in the LICENSE file.
 
 'use strict';
+
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+  let js = 'document.getElementById("navigation01").style.backgroundColor = "#003262";' + 'document.body.style.backgroundColor = "#FDB515";';
+
+  chrome.tabs.executeScript(
+    tabs[0].id,
+    {code : js }
+  );
+})
+
+// document.body.onload = alert('the extension loaded');
+
 // when chrome is running, add an event listener to it
 chrome.runtime.onInstalled.addListener(function() {
   // store a color in the 'storage api' - this is where the state exists for chrome extensions
   // This sets the starting color for the extension
-  chrome.storage.sync.set({color: '#3aa757'}, function() {
-    console.log('The color is green.');
+  const kButtonColors = ['#3aa757', '#e8453c', '#f9bb2d', '#4688f1', "#000000", "#222222", "white"];
+  chrome.storage.sync.set({colors: kButtonColors}, function() {
+    console.log("color added to storage");
   });
 
   // the declarativeContent api is another api used to take actions on the page based on the content of the page
