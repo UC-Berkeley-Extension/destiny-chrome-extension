@@ -1,6 +1,9 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+/**
+ * This runs the functionality of the pop up element, and it's effect on the target page.
+ * It's functionality includes: 
+ *  - Creating buttons with different colors and appending them to pop up html.
+ *  - 
+ */
 
 'use strict';
 // get element with id, 'changeColor'
@@ -22,6 +25,7 @@ chrome.storage.sync.get('colors', function(data) {
 
 });
 
+// Q - why is this duplicated in background.js??
 chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
   let js = 'document.getElementById("navigation01").style.backgroundColor = "#003262";' + 'document.body.style.backgroundColor = "#FDB515";';
 
@@ -31,6 +35,7 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
   );
 })
 
+// adds a click event to the target element and modifies it. 
 colorOptionDiv.onclick = function(element) {
   let color = element.target.value;
 

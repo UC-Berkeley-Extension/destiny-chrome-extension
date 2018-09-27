@@ -1,6 +1,11 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+/**
+ * This file loads up as soon as the chrome extension is clicked on (or activated) first.
+ * 
+ * In our functionality it:
+ *  - changes the background color to yellow and the navigation to blue. (Cal Colors)
+ *  - Adds the option of colors to storage
+ *  - Makes sure the host is berkeleytestsv.destinysolutions.com
+ */
 
 'use strict';
 
