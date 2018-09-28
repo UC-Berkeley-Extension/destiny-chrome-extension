@@ -1,4 +1,4 @@
-/**
+/*
  * This file loads up as soon as the chrome extension is clicked on (or activated) first.
  * 
  * In our functionality it:
@@ -8,17 +8,6 @@
  */
 
 'use strict';
-
-chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-  let js = 'document.getElementById("navigation01").style.backgroundColor = "#003262";' + 'document.body.style.backgroundColor = "#FDB515";';
-
-  chrome.tabs.executeScript(
-    tabs[0].id,
-    {code : js }
-  );
-})
-
-// document.body.onload = alert('the extension loaded');
 
 // when chrome is running, add an event listener to it
 chrome.runtime.onInstalled.addListener(function() {

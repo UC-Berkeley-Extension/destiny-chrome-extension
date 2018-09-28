@@ -5,7 +5,7 @@
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "options_page": "options.html",
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["lib/jquery.min.js","background.js"],
     "persistent": false
   },
   "page_action": {
@@ -23,5 +23,12 @@
     "48": "images/get_started48.png",
     "128": "images/get_started128.png"
   },
+  "content_scripts": [
+    {
+      "matches": ["https://*.destinysolutions.com/*"],
+      "css":["contentScripts/main.css"],
+      "js":["lib/jquery.min.js","contentScripts/app.js"]
+    }
+  ],
   "manifest_version": 2
 }
