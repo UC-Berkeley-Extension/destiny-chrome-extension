@@ -1,0 +1,44 @@
+div#navigation01{
+  background-color: #003262;
+  padding: 10px 0px;
+  width: 100vw; 
+}
+
+div#navigation02{
+  padding: 10px 0px;
+  width: 100vw
+}
+
+/* body#main-area-body{
+  background-color: #FDB515;
+} */
+
+/* table{
+  margin-left: auto;
+  margin-right: auto;
+} */
+#secondMenu li{
+  padding: 0px 7px;
+}
+
+#main-area{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  padding-top: 0px !important;
+}
+
+#contentContainer > div {
+  padding: 0px 50px;
+}
+/* div#content01{
+  width: 100vw;
+} */
+
+div#mainContent{
+  width: 100vw;
+}
+
+/* form{
+  margin-left:auto;
+  margin-right:auto;
+} */
