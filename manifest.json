@@ -25,7 +25,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*.destinysolutions.com/*"],
+      "matches": ["https://berkeleytestsv.destinysolutions.com/*"],
       "css":["contentScripts/main.css"],
       "js":["lib/jquery.min.js","contentScripts/app.js"]
     }
