@@ -3,25 +3,3 @@
 // found in the LICENSE file.
 
 'use strict';
-// log out the storage in the options section for reference.
-chrome.storage.sync.get(function(result){
-  console.log(result);
-});
- 
-let page = document.getElementById('buttonDiv');
-
-const kButtonColors = ['#3aa757', '#e8453c', '#f9bb2d', '#4688f1', "#000000", "#222222", "white", "pink", "green"];
-
-function constructOptions(kButtonColors) {
-  for (let item of kButtonColors) {
-    let button = document.createElement('button');
-    button.style.backgroundColor = item;
-    button.addEventListener('click', function() {
-      chrome.storage.sync.set({color: item}, function() {
-        console.log('color is ' + item);
-      })
-    });
-    page.appendChild(button);
-  }
-}
-constructOptions(kButtonColors);

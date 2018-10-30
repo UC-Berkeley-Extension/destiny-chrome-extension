@@ -5,7 +5,7 @@
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "options_page": "options.html",
   "background": {
-    "scripts": ["lib/jquery.min.js","background.js"],
+    "scripts": ["background.js"],
     "persistent": false
   },
   "page_action": {
@@ -27,7 +27,7 @@
     {
       "matches": ["https://berkeleytestsv.destinysolutions.com/*"],
       "css":["contentScripts/main.css"],
-      "js":["lib/jquery.min.js","contentScripts/app.js"]
+      "js":["contentScripts/app.js"]
     }
   ],
   "manifest_version": 2

@@ -11,12 +11,6 @@
 
 // when chrome is running, add an event listener to it
 chrome.runtime.onInstalled.addListener(function() {
-  // store a color in the 'storage api' - this is where the state exists for chrome extensions
-  // This sets the starting color for the extension
-  const kButtonColors = ['#3aa757', '#e8453c', '#f9bb2d', '#4688f1', "#000000", "#222222", "white"];
-  chrome.storage.sync.set({colors: kButtonColors}, function() {
-    console.log("color added to storage");
-  });
 
   // the declarativeContent api is another api used to take actions on the page based on the content of the page
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function()
