@@ -1,2 +1,1 @@
-console.log('in the content script');
-console.log($('body'));
+console.log('this script runs on load');
