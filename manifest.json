@@ -1,7 +1,7 @@
 {
-  "name": "Destiny Chrome Extension",
+  "name": "Hope - A Destiny Chrome Extension for UNEX",
   "version": "1.0",
-  "description": "Destiny Chrome Extension to change styling of Destiny Staff View",
+  "description": "A Destiny Chrome Extension To Change The Styling Of Destiny Staff View On Test",
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "options_page": "options.html",
   "background": {
@@ -26,8 +26,8 @@
   "content_scripts": [
     {
       "matches": ["https://berkeleytestsv.destinysolutions.com/*"],
-      "css":["contentScripts/main.css"],
-      "js":["contentScripts/app.js"]
+      "css": ["contentScripts/main.css"],
+      "js": ["contentScripts/app.js"]
     }
   ],
   "manifest_version": 2
