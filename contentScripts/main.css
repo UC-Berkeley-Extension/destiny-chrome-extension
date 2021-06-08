@@ -1,5 +1,5 @@
 div#navigation01{
-  background-color: #003262;
+  background-color: var(--alert-color);
   padding: 10px 0px;
   width: 100vw; 
 }
